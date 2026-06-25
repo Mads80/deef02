@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Pi-Hole on &gt;_ deef</title>
+    <link>http://localhost:1313/tags/pi-hole/</link>
+    <description>Recent content in Pi-Hole on &gt;_ deef</description>
+    <generator>Hugo</generator>
+    <language>en-GB</language>
+    <lastBuildDate>Thu, 25 Jun 2026 17:52:28 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/pi-hole/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pi Hole</title>
+      <link>http://localhost:1313/posts/pi-hole/</link>
+      <pubDate>Thu, 25 Jun 2026 17:52:28 +0200</pubDate>
+      <guid>http://localhost:1313/posts/pi-hole/</guid>
+      <description>&lt;p&gt;This is a placeholder for the Pi Hole post. I will fill this in with more details about the Pi Hole project soon.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone --depth &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; https://github.com/pi-hole/pi-hole.git Pi-hole
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Pi-hole/automated install/&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo bash basic-install.sh
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>
