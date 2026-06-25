@@ -8,3 +8,5 @@ title = 'My First Post'
 This is **bold** text, and this is *italic* text.
 
 Visit the [Hugo](https://gohugo.io/) website.
+
+Fedt mand.
