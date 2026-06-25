@@ -6,10 +6,25 @@ title = '>_ deef'
 [params]
 defaultTheme = 'auto'
 hideFooter = true
+socialIcons = [
+  {name = 'github', url = 'https://github.com/mads80'},
+  {name = 'instagram', url = 'https://instagram.com/mads2o5'}
+]
+showReadingTime = true
+showBreadcrumbs = true
+showPostNavLinks = true
+showCopyCode = true
 
 [params.homeInfoParams]
 title = 'Hello, World!'
 content = 'Here I will write about my discoveries in tech and my journey through the world.'
+
+[outputs]
+home = [
+  "HTML",
+  "RSS",
+  "JSON" # necessary for search
+]
 
 # Menu
 [[menu.main]]
@@ -25,9 +40,9 @@ url = '/about/'
 weight = 2
 
 [[menu.main]]
-identifier = 'contact'
-name = 'Contact'
-url = '/contact/'
+identifier = 'search'
+name = 'Search'
+url = '/search/'
 weight = 3
 
 [[menu.main]]
