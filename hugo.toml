@@ -1,0 +1,37 @@
+baseURL = 'https://example.org/'
+theme = 'PaperMod'
+locale = 'en-GB'
+title = '>_ deef'
+
+[params]
+defaultTheme = 'auto'
+hideFooter = true
+
+[params.homeInfoParams]
+title = 'Hello, World!'
+content = 'Here I will write about my discoveries in tech and my journey through the world.'
+
+# Menu
+[[menu.main]]
+identifier = 'home'
+name = 'Home'
+url = '/'
+weight = 1
+
+[[menu.main]]
+identifier = 'about'
+name = 'About'
+url = '/about/'
+weight = 2
+
+[[menu.main]]
+identifier = 'contact'
+name = 'Contact'
+url = '/contact/'
+weight = 3
+
+[[menu.main]]
+identifier = 'blog'
+name = 'Blog'
+url = '/blog/'
+weight = 4
