@@ -49,13 +49,13 @@ url = '/search/'
 weight = 3
 
 [[menu.main]]
-identifier = 'archives'
-name = 'Archives'
-url = '/archives/'
-weight = 4
-
-[[menu.main]]
 identifier = 'tags'
 name = 'Tags'
 url = '/tags'
+weight = 4
+
+[[menu.main]]
+identifier = 'archives'
+name = 'Archives'
+url = '/archives/'
 weight = 5
