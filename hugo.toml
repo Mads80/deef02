@@ -1,12 +1,13 @@
 baseURL = 'https://example.org/'
 theme = 'PaperMod'
 locale = 'en-GB'
-title = '>_ deef'
+title = '>_ deef.dk'
 
 
 [params]
+#env = 'production'
 defaultTheme = 'auto'
-hideFooter = true
+hideFooter = false
 socialIcons = [
   {name = 'github', url = 'https://github.com/mads80'},
   {name = 'instagram', url = 'https://instagram.com/mads2o5'}
@@ -15,6 +16,7 @@ showReadingTime = true
 showBreadcrumbs = true
 showPostNavLinks = true
 showCodeCopyButtons = true
+showPageNums = true
 
 [params.homeInfoParams]
 title = 'Hello, World!'

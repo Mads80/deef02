@@ -5,16 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Pi Hole | &gt;_ deef</title>
+<title>Pi-hole | &gt;_ deef.dk</title>
 <meta name="keywords" content="pi-hole, ad-blocking, dns, network">
-<meta name="description" content="This is a placeholder for the Pi Hole post. I will fill this in with more details about the Pi Hole project soon.
-git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
-cd &#34;Pi-hole/automated install/&#34;
-sudo bash basic-install.sh
-Proxmox community script: https://community-scripts.org/scripts/pihole?id=pihole
-Run the command below in the Proxmox VE Shell to install Pi-Hole.
-bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/pihole.sh)&#34;
-">
+<meta name="description" content="I have Pi-hole installed on more than one device. The reason for this is that with more than one device, I can a more robust setup. For example, I have it installed on my raspberry pi and my Proxmox VE, so that if one device goes down, the other can still block ads.
+Right now Pi-hole is running on my Proxmox VE in two different nodes and a Raspberry Pi Model 2B.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/pi-hole/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
@@ -77,7 +71,7 @@ bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/community-scripts/Pr
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="&gt;_ deef (Alt + H)">&gt;_ deef</a>
+            <a href="http://localhost:1313/" accesskey="h" title="&gt;_ deef.dk (Alt + H)">&gt;_ deef.dk</a>
             <div class="logo-switches">
                 <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
@@ -147,7 +141,7 @@ bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/community-scripts/Pr
     </svg>
 </nav>
     <h1 class="post-title entry-hint-parent">
-      Pi Hole
+      Pi-hole
       <span class="entry-hint" title="Draft">
         <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
           <path
@@ -161,14 +155,21 @@ bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/community-scripts/Pr
 
 </div>
   </header> 
-  <div class="post-content md-content"><p>This is a placeholder for the Pi Hole post. I will fill this in with more details about the Pi Hole project soon.</p>
+  <div class="post-content md-content"><p>I have Pi-hole installed on more than one device. The reason for this is that with more than one device, I can a more robust setup. For example, I have it installed on my raspberry pi and my Proxmox VE, so that if one device goes down, the other can still block ads.</p>
+<p>Right now Pi-hole is running on my Proxmox VE in two different nodes and a Raspberry Pi Model 2B.</p>
+<p>For the Raspberry Pi Model 2B, I have it running in headless mode, so that it can be controlled remotely. I used the code below to install it.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --depth <span style="color:#ae81ff">1</span> https://github.com/pi-hole/pi-hole.git Pi-hole
 </span></span><span style="display:flex;"><span>cd <span style="color:#e6db74">&#34;Pi-hole/automated install/&#34;</span>
 </span></span><span style="display:flex;"><span>sudo bash basic-install.sh
-</span></span></code></pre></div><p>Proxmox community script: <a href="https://community-scripts.org/scripts/pihole?id=pihole">https://community-scripts.org/scripts/pihole?id=pihole</a>
-Run the command below in the Proxmox VE Shell to install Pi-Hole.</p>
+</span></span></code></pre></div><p>For the Proxmox VE nodes, I used the community script below to install it.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/pihole.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span></code></pre></div>
+</span></span></code></pre></div><p>Resources:</p>
+<ul>
+<li><a href="https://pi-hole.net/">Pi-hole</a></li>
+<li><a href="https://www.proxmox.com/en/">Proxmox VE</a></li>
+<li><a href="https://community-scripts.org/scripts/pihole?id=pihole">Proxmox VE Pi-hole Script</a></li>
+</ul>
+
 
   </div>
 
@@ -180,6 +181,10 @@ Run the command below in the Proxmox VE Shell to install Pi-Hole.</p>
       <li><a href="http://localhost:1313/tags/network/">Network</a></li>
     </ul>
 <nav class="paginav">
+  <a class="prev" href="http://localhost:1313/posts/homelab/">
+    <span class="title">« Prev</span>
+    <span>Homelabbing</span>
+  </a>
   <a class="next" href="http://localhost:1313/posts/my-first-post/">
     <span class="title">Next »</span>
     <span>My First Post</span>
@@ -190,6 +195,18 @@ Run the command below in the Proxmox VE Shell to install Pi-Hole.</p>
 </article>
     </main>
     
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">&gt;_ deef.dk</a></span> · 
+
+    
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+
+</footer>
 <a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
         stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
@@ -206,7 +223,7 @@ Run the command below in the Proxmox VE Shell to install Pi-Hole.</p>
         if (scrollPosition) {
             menu.scrollLeft = parseInt(scrollPosition, 10);
         }
-        
+
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }

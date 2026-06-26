@@ -1,26 +1,111 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>&gt;_ deef</title>
+    <title>&gt;_ deef.dk</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content on &gt;_ deef</description>
+    <description>Recent content on &gt;_ deef.dk</description>
     <generator>Hugo</generator>
     <language>en-GB</language>
-    <lastBuildDate>Thu, 25 Jun 2026 17:52:28 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jun 2026 12:56:50 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Pi Hole</title>
+      <title>Homelabbing</title>
+      <link>http://localhost:1313/posts/homelab/</link>
+      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
+      <guid>http://localhost:1313/posts/homelab/</guid>
+      <description>&lt;p&gt;Hardware&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3× Lenovo ThinkCentre M920x 16 GB RAM, 256 GB NVMe&lt;/li&gt;
+&lt;li&gt;Raspberry Pi 3B with HiFiBerry AMP+&lt;/li&gt;
+&lt;li&gt;Raspberry Pi 2B
+Network&lt;/li&gt;
+&lt;li&gt;Cloud Gateway Ultra&lt;/li&gt;
+&lt;li&gt;USW Flex Mini&lt;/li&gt;
+&lt;li&gt;U7 Lite AP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;My Homelab&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/IMG_7091.jpg&#34;&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;network-and-vlans&#34;&gt;Network and VLANs&lt;/h3&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Segment&lt;/th&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Enhed / SSID&lt;/th&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;IP-adresse&lt;/th&gt;
+					&lt;th style=&#34;text-align: left&#34;&gt;Funktion / Type&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;lv-426 Proxmox&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;192.168.1.10&lt;/code&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Proxmox Node&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;lv-223 Proxmox&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;192.168.1.11&lt;/code&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Proxmox Node&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;lv-178 Proxmox&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;192.168.1.12&lt;/code&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Proxmox Node&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Pi-hole Primary&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;192.168.1.127&lt;/code&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;DNS / Blocking&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Pi-hole Secondary&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;192.168.1.130&lt;/code&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;DNS / Backup&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Home Assistant&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;192.168.1.103&lt;/code&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Smart Home Controller&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;VLAN 10&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Atomi wlan0&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;192.168.10.204&lt;/code&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;IoT Device&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;VLAN 10&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Atomi wlan0&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;192.168.10.104&lt;/code&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;IoT Device&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;VLAN 10&lt;/strong&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;Atomi wlan0&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;&lt;code&gt;192.168.10.44&lt;/code&gt;&lt;/td&gt;
+					&lt;td style=&#34;text-align: left&#34;&gt;IoT Device&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;</description>
+    </item>
+    <item>
+      <title>Pi-hole</title>
       <link>http://localhost:1313/posts/pi-hole/</link>
       <pubDate>Thu, 25 Jun 2026 17:52:28 +0200</pubDate>
       <guid>http://localhost:1313/posts/pi-hole/</guid>
-      <description>&lt;p&gt;This is a placeholder for the Pi Hole post. I will fill this in with more details about the Pi Hole project soon.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone --depth &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt; https://github.com/pi-hole/pi-hole.git Pi-hole
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Pi-hole/automated install/&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo bash basic-install.sh
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Proxmox community script: &lt;a href=&#34;https://community-scripts.org/scripts/pihole?id=pihole&#34;&gt;https://community-scripts.org/scripts/pihole?id=pihole&lt;/a&gt;
-Run the command below in the Proxmox VE Shell to install Pi-Hole.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bash -c &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;$(&lt;/span&gt;curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/pihole.sh&lt;span style=&#34;color:#66d9ef&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <description>&lt;p&gt;I have Pi-hole installed on more than one device. The reason for this is that with more than one device, I can a more robust setup. For example, I have it installed on my raspberry pi and my Proxmox VE, so that if one device goes down, the other can still block ads.&lt;/p&gt;
+&lt;p&gt;Right now Pi-hole is running on my Proxmox VE in two different nodes and a Raspberry Pi Model 2B.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About</title>
