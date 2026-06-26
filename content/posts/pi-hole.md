@@ -15,7 +15,7 @@ sudo bash basic-install.sh
 ```
 
 Proxmox community script: https://community-scripts.org/scripts/pihole?id=pihole
-
+Run the command below in the Proxmox VE Shell to install Pi-Hole.
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/pihole.sh)"
 ```

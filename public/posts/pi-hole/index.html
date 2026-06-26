@@ -12,6 +12,7 @@ git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
 cd &#34;Pi-hole/automated install/&#34;
 sudo bash basic-install.sh
 Proxmox community script: https://community-scripts.org/scripts/pihole?id=pihole
+Run the command below in the Proxmox VE Shell to install Pi-Hole.
 bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/pihole.sh)&#34;
 ">
 <meta name="author" content="">
@@ -164,7 +165,8 @@ bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/community-scripts/Pr
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --depth <span style="color:#ae81ff">1</span> https://github.com/pi-hole/pi-hole.git Pi-hole
 </span></span><span style="display:flex;"><span>cd <span style="color:#e6db74">&#34;Pi-hole/automated install/&#34;</span>
 </span></span><span style="display:flex;"><span>sudo bash basic-install.sh
-</span></span></code></pre></div><p>Proxmox community script: <a href="https://community-scripts.org/scripts/pihole?id=pihole">https://community-scripts.org/scripts/pihole?id=pihole</a></p>
+</span></span></code></pre></div><p>Proxmox community script: <a href="https://community-scripts.org/scripts/pihole?id=pihole">https://community-scripts.org/scripts/pihole?id=pihole</a>
+Run the command below in the Proxmox VE Shell to install Pi-Hole.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/pihole.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
 </span></span></code></pre></div>
 
@@ -254,6 +256,53 @@ bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/community-scripts/Pr
         }
     })
 
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
 </script>
 </body>
 

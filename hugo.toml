@@ -14,7 +14,7 @@ socialIcons = [
 showReadingTime = true
 showBreadcrumbs = true
 showPostNavLinks = true
-showCopyCode = true
+showCodeCopyButtons = true
 
 [params.homeInfoParams]
 title = 'Hello, World!'
