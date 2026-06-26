@@ -1,4 +1,7 @@
 <details>
-    <summary>{{ (.Get 0) | markdownify }}</summary>
-    {{ .Inner | markdownify }}
+    <summary>{{ .Get "title" }}</summary>
+    {{- $file := .Get "file" -}} {{- $lang := .Get "lang" | default "yaml" -}}
+    {{- with resources.Get $file -}} {{ highlight .Content $lang "" }} {{- else
+    -}} {{/* Falder tilbage til standard indhold, hvis ingen fil er angivet */}}
+    {{ .Inner | markdownify }} {{- end -}}
 </details>

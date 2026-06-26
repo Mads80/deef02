@@ -13,7 +13,7 @@
       <link>http://localhost:1313/posts/homelab/</link>
       <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
       <guid>http://localhost:1313/posts/homelab/</guid>
-      <description>&lt;h3 id=&#34;hardware&#34;&gt;Hardware&lt;/h3&gt;
+      <description>&lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;3× Lenovo ThinkCentre M920x 16 GB RAM, 256 GB NVMe&lt;/li&gt;
 &lt;li&gt;Raspberry Pi 3B with HiFiBerry AMP+&lt;/li&gt;
@@ -26,7 +26,7 @@
 &lt;span style=&#34;color: grey;&#34;&gt;&lt;em&gt;The top ThinkCentre is my workcomputer and not part of the homelab.&lt;/em&gt;&lt;/span&gt;
 &lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;network&#34;&gt;Network&lt;/h3&gt;
+&lt;h2 id=&#34;network&#34;&gt;Network&lt;/h2&gt;
 &lt;table&gt;
 	&lt;thead&gt;
 			&lt;tr&gt;
@@ -94,7 +94,7 @@
 	&lt;/tbody&gt;
 &lt;/table&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;pi-hole&#34;&gt;Pi-hole&lt;/h3&gt;
+&lt;h2 id=&#34;pi-hole&#34;&gt;Pi-hole&lt;/h2&gt;
 &lt;p&gt;I have Pi-hole installed on more than one device. The reason for this is that with more than one device, I can a more robust setup. For example, I have it installed on my raspberry pi and my Proxmox VE, so that if one device goes down, the other can still block ads.&lt;/p&gt;</description>
     </item>
     <item>
