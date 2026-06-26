@@ -15,7 +15,7 @@ tags = ['homelab', 'proxmox', 'raspberry pi', 'home assistant']
 
 
 ![My Homelab](/images/IMG_7091.jpg)
-{{<color "grey">}}_The top computer is my workcomputer and not part of the homelab._{{</color>}}
+{{<color "grey">}}_The top ThinkCentre is my workcomputer and not part of the homelab._{{</color>}}
 
 ---
 
