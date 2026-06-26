@@ -17,6 +17,7 @@ showBreadcrumbs = true
 showPostNavLinks = true
 showCodeCopyButtons = true
 showPageNums = true
+showToc = true
 
 [params.homeInfoParams]
 title = 'Hello, World!'
