@@ -15,3 +15,7 @@ sudo bash basic-install.sh
 ```
 
 Proxmox community script: https://community-scripts.org/scripts/pihole?id=pihole
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/pihole.sh)"
+```
