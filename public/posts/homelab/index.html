@@ -89,7 +89,7 @@ Network
 
 
 Pi-hole
-I have Pi-hole installed on more than one device. The reason for this is that with more than one device, I can a more robust setup. For example, I have it installed on my raspberry pi and my Proxmox VE, so that if one device goes down, the other can still block ads.">
+I have installed Pi-hole on multiple devices to create a redundant and fault-tolerant network setup. By running multiple instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/homelab/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
@@ -338,9 +338,13 @@ I have Pi-hole installed on more than one device. The reason for this is that wi
 </table>
 <hr>
 <h2 id="pi-hole">Pi-hole<a hidden class="anchor" aria-hidden="true" href="#pi-hole">#</a></h2>
-<p>I have Pi-hole installed on more than one device. The reason for this is that with more than one device, I can a more robust setup. For example, I have it installed on my raspberry pi and my Proxmox VE, so that if one device goes down, the other can still block ads.</p>
-<p>Right now Pi-hole is running on my Proxmox VE in two different nodes and a Raspberry Pi Model 2B.</p>
-<p>For the Raspberry Pi Model 2B, I have it running in headless mode, so that it can be controlled remotely. I used the code below to install.</p>
+<p>I have installed Pi-hole on multiple devices to create a redundant and fault-tolerant network setup. By running multiple instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.</p>
+<p>My current setup consists of two Pi-hole instances across the following hardware:</p>
+<ul>
+<li><strong>One Proxmox VE node:</strong> Running a virtualized Pi-hole instance.</li>
+<li><strong>One Raspberry Pi 2 Model B:</strong> Running in headless mode and managed remotely over the network.</li>
+</ul>
+<p>I used the following command to install Pi-hole on the Raspberry Pi:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --depth <span style="color:#ae81ff">1</span> https://github.com/pi-hole/pi-hole.git Pi-hole
 </span></span><span style="display:flex;"><span>cd <span style="color:#e6db74">&#34;Pi-hole/automated install/&#34;</span>
 </span></span><span style="display:flex;"><span>sudo bash basic-install.sh

@@ -37,12 +37,13 @@ tags = ['homelab', 'proxmox', 'raspberry pi', 'home assistant', 'pi-hole']
 
 ## Pi-hole
 
-I have Pi-hole installed on more than one device. The reason for this is that with more than one device, I can a more robust setup. For example, I have it installed on my raspberry pi and my Proxmox VE, so that if one device goes down, the other can still block ads.
+I have installed Pi-hole on multiple devices to create a redundant and fault-tolerant network setup. By running multiple instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.
 
-Right now Pi-hole is running on my Proxmox VE in two different nodes and a Raspberry Pi Model 2B.
+My current setup consists of two Pi-hole instances across the following hardware:
+* **One Proxmox VE node:** Running a virtualized Pi-hole instance.
+* **One Raspberry Pi 2 Model B:** Running in headless mode and managed remotely over the network.
 
-For the Raspberry Pi Model 2B, I have it running in headless mode, so that it can be controlled remotely. I used the code below to install.
-
+I used the following command to install Pi-hole on the Raspberry Pi:
 ```bash
 git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
 cd "Pi-hole/automated install/"
@@ -67,6 +68,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/Proxmo
 My Home Assistant dashboard.
 ![Home Assistant Dashboard](/images/IMG_0006.PNG)
 
+<!-- Data ligger i assets/snippets/ha-config.yaml, da det fyldte for meget her -->
 {{< details title="Click here to see the full HA Dashboard YAML" file="snippets/ha-config.yaml" lang="yaml" >}}{{< /details >}}
 
 ---

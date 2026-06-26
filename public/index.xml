@@ -95,7 +95,7 @@
 &lt;/table&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;pi-hole&#34;&gt;Pi-hole&lt;/h2&gt;
-&lt;p&gt;I have Pi-hole installed on more than one device. The reason for this is that with more than one device, I can a more robust setup. For example, I have it installed on my raspberry pi and my Proxmox VE, so that if one device goes down, the other can still block ads.&lt;/p&gt;</description>
+&lt;p&gt;I have installed Pi-hole on multiple devices to create a redundant and fault-tolerant network setup. By running multiple instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Pi-hole</title>
