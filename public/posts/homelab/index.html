@@ -17,71 +17,86 @@ USW Flex Mini
 U7 Lite AP
 
 
-The top ThinkCentre is my workcomputer and not part of the homelab.
+The top ThinkCentre is my WFH-computer and not part of the homelab.
 
 
 Network
 
+Gateway/router/firewall: 192.168.1.1
+
+
 	
 			
 					Segment
-					Name
-					IP
+					Hostname
+					IP / Port
 					Function / Type
 			
 	
 	
 			
 					VLAN 1
-					lv-426 Proxmox
-					192.168.1.10
-					Proxmox Node
-			
-			
-					VLAN 1
-					lv-223 Proxmox
-					192.168.1.11
-					Proxmox Node
-			
-			
-					VLAN 1
-					lv-178 Proxmox
-					192.168.1.12
-					Proxmox Node
-			
-			
-					VLAN 1
-					Pi-hole Primary
-					192.168.1.127
-					DNS / Blocking
-			
-			
-					VLAN 1
-					Pi-hole Secondary
-					192.168.1.130
-					DNS / Backup
-			
-			
-					VLAN 1
+					ha.deef.dk
+					192.168.1.103:8123
 					Home Assistant
-					192.168.1.103
-					Smart Home Controller
+			
+			
+					VLAN 1
+					lv-178.deef.dk
+					192.168.1.12:8006
+					Proxmox Node
+			
+			
+					VLAN 1
+					lv-223.deef.dk
+					192.168.1.11:8006
+					Proxmox Node
+			
+			
+					VLAN 1
+					lv-426.deef.dk
+					192.168.1.10:8006
+					Proxmox Node
+			
+			
+					VLAN 1
+					moode.deef.dk
+					192.168.1.248:80
+					Moode Audio
+			
+			
+					VLAN 1
+					nginx.deef.dk
+					192.168.1.204:81
+					Proxy Manager &amp; DNS
+			
+			
+					VLAN 1
+					pi-hole.deef.dk
+					192.168.1.127:80
+					Ad Blocking
+			
+			
+					VLAN 1
+					pi-hole2.deef.dk
+					192.168.1.130:80
+					Ad Blocking
 			
 			
 					VLAN 10
-					Atomi wlan0
+					-
 					192.168.10.204
 					IoT Device
 			
 			
 					VLAN 10
-					Atomi wlan0
+					-
 					192.168.10.104
 					IoT Device
 			
 			
 					VLAN 10
-					Atomi wlan0
+					-
 					192.168.10.44
 					IoT Device
 			
@@ -265,74 +280,89 @@ I have installed Pi-hole on multiple devices to create a redundant and fault-tol
 <li>USW Flex Mini</li>
 <li>U7 Lite AP</li>
 </ul>
-<p><img alt="My Homelab" loading="lazy" src="/images/IMG_7091.jpg">
-<span style="color: grey;"><em>The top ThinkCentre is my workcomputer and not part of the homelab.</em></span>
-</p>
+<p><img alt="My Homelab" loading="lazy" src="/images/IMG_7091.jpg"></p>
+<span style="color: grey;"><em>The top ThinkCentre is my WFH-computer and not part of the homelab.</em></span>
+
 <hr>
 <h2 id="network">Network<a hidden class="anchor" aria-hidden="true" href="#network">#</a></h2>
+<blockquote>
+<p>Gateway/router/firewall: <code>192.168.1.1</code></p>
+</blockquote>
 <table>
 	<thead>
 			<tr>
-					<th style="text-align: left">Segment</th>
-					<th style="text-align: left">Name</th>
-					<th style="text-align: left">IP</th>
-					<th style="text-align: left">Function / Type</th>
+					<th>Segment</th>
+					<th>Hostname</th>
+					<th>IP / Port</th>
+					<th>Function / Type</th>
 			</tr>
 	</thead>
 	<tbody>
 			<tr>
-					<td style="text-align: left"><strong>VLAN 1</strong></td>
-					<td style="text-align: left">lv-426 Proxmox</td>
-					<td style="text-align: left"><code>192.168.1.10</code></td>
-					<td style="text-align: left">Proxmox Node</td>
+					<td><strong>VLAN 1</strong></td>
+					<td>ha.deef.dk</td>
+					<td><code>192.168.1.103:8123</code></td>
+					<td>Home Assistant</td>
 			</tr>
 			<tr>
-					<td style="text-align: left"><strong>VLAN 1</strong></td>
-					<td style="text-align: left">lv-223 Proxmox</td>
-					<td style="text-align: left"><code>192.168.1.11</code></td>
-					<td style="text-align: left">Proxmox Node</td>
+					<td><strong>VLAN 1</strong></td>
+					<td>lv-178.deef.dk</td>
+					<td><code>192.168.1.12:8006</code></td>
+					<td>Proxmox Node</td>
 			</tr>
 			<tr>
-					<td style="text-align: left"><strong>VLAN 1</strong></td>
-					<td style="text-align: left">lv-178 Proxmox</td>
-					<td style="text-align: left"><code>192.168.1.12</code></td>
-					<td style="text-align: left">Proxmox Node</td>
+					<td><strong>VLAN 1</strong></td>
+					<td>lv-223.deef.dk</td>
+					<td><code>192.168.1.11:8006</code></td>
+					<td>Proxmox Node</td>
 			</tr>
 			<tr>
-					<td style="text-align: left"><strong>VLAN 1</strong></td>
-					<td style="text-align: left">Pi-hole Primary</td>
-					<td style="text-align: left"><code>192.168.1.127</code></td>
-					<td style="text-align: left">DNS / Blocking</td>
+					<td><strong>VLAN 1</strong></td>
+					<td>lv-426.deef.dk</td>
+					<td><code>192.168.1.10:8006</code></td>
+					<td>Proxmox Node</td>
 			</tr>
 			<tr>
-					<td style="text-align: left"><strong>VLAN 1</strong></td>
-					<td style="text-align: left">Pi-hole Secondary</td>
-					<td style="text-align: left"><code>192.168.1.130</code></td>
-					<td style="text-align: left">DNS / Backup</td>
+					<td><strong>VLAN 1</strong></td>
+					<td>moode.deef.dk</td>
+					<td><code>192.168.1.248:80</code></td>
+					<td>Moode Audio</td>
 			</tr>
 			<tr>
-					<td style="text-align: left"><strong>VLAN 1</strong></td>
-					<td style="text-align: left">Home Assistant</td>
-					<td style="text-align: left"><code>192.168.1.103</code></td>
-					<td style="text-align: left">Smart Home Controller</td>
+					<td><strong>VLAN 1</strong></td>
+					<td>nginx.deef.dk</td>
+					<td><code>192.168.1.204:81</code></td>
+					<td>Proxy Manager &amp; DNS</td>
 			</tr>
 			<tr>
-					<td style="text-align: left"><strong>VLAN 10</strong></td>
-					<td style="text-align: left">Atomi wlan0</td>
-					<td style="text-align: left"><code>192.168.10.204</code></td>
-					<td style="text-align: left">IoT Device</td>
+					<td><strong>VLAN 1</strong></td>
+					<td>pi-hole.deef.dk</td>
+					<td><code>192.168.1.127:80</code></td>
+					<td>Ad Blocking</td>
 			</tr>
 			<tr>
-					<td style="text-align: left"><strong>VLAN 10</strong></td>
-					<td style="text-align: left">Atomi wlan0</td>
-					<td style="text-align: left"><code>192.168.10.104</code></td>
-					<td style="text-align: left">IoT Device</td>
+					<td><strong>VLAN 1</strong></td>
+					<td>pi-hole2.deef.dk</td>
+					<td><code>192.168.1.130:80</code></td>
+					<td>Ad Blocking</td>
 			</tr>
 			<tr>
-					<td style="text-align: left"><strong>VLAN 10</strong></td>
-					<td style="text-align: left">Atomi wlan0</td>
-					<td style="text-align: left"><code>192.168.10.44</code></td>
-					<td style="text-align: left">IoT Device</td>
+					<td><strong>VLAN 10</strong></td>
+					<td>-</td>
+					<td><code>192.168.10.204</code></td>
+					<td>IoT Device</td>
+			</tr>
+			<tr>
+					<td><strong>VLAN 10</strong></td>
+					<td>-</td>
+					<td><code>192.168.10.104</code></td>
+					<td>IoT Device</td>
+			</tr>
+			<tr>
+					<td><strong>VLAN 10</strong></td>
+					<td>-</td>
+					<td><code>192.168.10.44</code></td>
+					<td>IoT Device</td>
 			</tr>
 	</tbody>
 </table>
@@ -593,6 +623,7 @@ I have installed Pi-hole on multiple devices to create a redundant and fault-tol
 <h2 id="resources">Resources<a hidden class="anchor" aria-hidden="true" href="#resources">#</a></h2>
 <ul>
 <li><a href="https://www.home-assistant.io/">Home Assistant</a></li>
+<li><a href="https://nginxproxymanager.com/">Nginx Proxy Manager</a></li>
 <li><a href="https://pi-hole.net/">Pi-hole</a></li>
 <li><a href="https://community-scripts.org/scripts/home-assistant?id=home-assistant">Proxmox Home Assistant Script</a></li>
 <li><a href="https://community-scripts.org/scripts/pihole?id=pihole">Proxmox Pi-hole Script</a></li>

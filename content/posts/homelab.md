@@ -15,23 +15,27 @@ tags = ['homelab', 'proxmox', 'raspberry pi', 'home assistant', 'pi-hole']
 
 
 ![My Homelab](/images/IMG_7091.jpg)
-{{<color "grey">}}_The top ThinkCentre is my workcomputer and not part of the homelab._{{</color>}}
+<!-- Farven for denne text ligger i layouts/shortcodes/color.html -->
+{{<color "grey">}}_The top ThinkCentre is my WFH-computer and not part of the homelab._{{</color>}}
 
 ---
 
 ## Network
+>Gateway/router/firewall: `192.168.1.1`
 
-| Segment | Name | IP | Function / Type |
-| :--- | :--- | :--- | :--- |
-| **VLAN 1** | lv-426 Proxmox | `192.168.1.10` | Proxmox Node |
-| **VLAN 1** | lv-223 Proxmox | `192.168.1.11` | Proxmox Node |
-| **VLAN 1** | lv-178 Proxmox | `192.168.1.12` | Proxmox Node |
-| **VLAN 1** | Pi-hole Primary | `192.168.1.127` | DNS / Blocking |
-| **VLAN 1** | Pi-hole Secondary | `192.168.1.130` | DNS / Backup |
-| **VLAN 1** | Home Assistant | `192.168.1.103` | Smart Home Controller |
-| **VLAN 10** | Atomi wlan0 | `192.168.10.204` | IoT Device |
-| **VLAN 10** | Atomi wlan0 | `192.168.10.104` | IoT Device |
-| **VLAN 10** | Atomi wlan0 | `192.168.10.44` | IoT Device |
+| Segment | Hostname | IP / Port | Function / Type |
+| ---------- | ---------- | -------------------- | -------------- |
+| **VLAN 1** | ha.deef.dk | `192.168.1.103:8123` | Home Assistant |
+| **VLAN 1** | lv-178.deef.dk | `192.168.1.12:8006` | Proxmox Node |
+| **VLAN 1** | lv-223.deef.dk | `192.168.1.11:8006` | Proxmox Node |
+| **VLAN 1** | lv-426.deef.dk | `192.168.1.10:8006` | Proxmox Node |
+| **VLAN 1** | moode.deef.dk | `192.168.1.248:80` | Moode Audio |
+| **VLAN 1** | nginx.deef.dk | `192.168.1.204:81` | Proxy Manager & DNS |
+| **VLAN 1** | pi-hole.deef.dk | `192.168.1.127:80` | Ad Blocking |
+| **VLAN 1** | pi-hole2.deef.dk | `192.168.1.130:80` | Ad Blocking |
+| **VLAN 10** | - | `192.168.10.204` | IoT Device |
+| **VLAN 10** | - | `192.168.10.104` | IoT Device |
+| **VLAN 10** | - | `192.168.10.44` | IoT Device |
 
 ---
 
@@ -75,6 +79,7 @@ My Home Assistant dashboard.
 
 ## Resources
 - [Home Assistant](https://www.home-assistant.io/)
+- [Nginx Proxy Manager](https://nginxproxymanager.com/)
 - [Pi-hole](https://pi-hole.net/)
 - [Proxmox Home Assistant Script](https://community-scripts.org/scripts/home-assistant?id=home-assistant)
 - [Proxmox Pi-hole Script](https://community-scripts.org/scripts/pihole?id=pihole)
