@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Npm on &gt;_ deef.dk</title>
+    <link>http://localhost:1313/tags/npm/</link>
+    <description>Recent content in Npm on &gt;_ deef.dk</description>
+    <generator>Hugo</generator>
+    <language>en-GB</language>
+    <lastBuildDate>Fri, 26 Jun 2026 12:56:50 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/npm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Homelabbing</title>
+      <link>http://localhost:1313/posts/homelab/</link>
+      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
+      <guid>http://localhost:1313/posts/homelab/</guid>
+      <description>&lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Lenovo ThinkCentre M920x, i5-9400T, 16 GB RAM, 256 GB NVMe (lv-426)&lt;/li&gt;
+&lt;li&gt;Lenovo ThinkCentre M920x, i5-8500, 16 GB RAM, 256 GB NVMe (lv-223)&lt;/li&gt;
+&lt;li&gt;Lenovo ThinkCentre M920x, i3-8100, 16 GB RAM, 256 GB NVMe (lv-178)&lt;/li&gt;
+&lt;li&gt;Raspberry Pi 3B + HiFiBerry AMP+&lt;/li&gt;
+&lt;li&gt;Raspberry Pi 2B&lt;/li&gt;
+&lt;li&gt;Cloud Gateway Ultra&lt;/li&gt;
+&lt;li&gt;USW Flex Mini&lt;/li&gt;
+&lt;li&gt;U7 Lite AP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img alt=&#34;My Homelab&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/IMG_7091.jpg&#34;&gt;&lt;/p&gt;
+&lt;span style=&#34;color: grey;&#34;&gt;&lt;em&gt;The top ThinkCentre is my WFH-computer and not part of the homelab.&lt;/em&gt;&lt;/span&gt;
+
+&lt;hr&gt;
+&lt;h2 id=&#34;network&#34;&gt;Network&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Gateway/router/firewall: &lt;code&gt;192.168.1.1&lt;/code&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;table&gt;
+	&lt;thead&gt;
+			&lt;tr&gt;
+					&lt;th&gt;Segment&lt;/th&gt;
+					&lt;th&gt;Hostname&lt;/th&gt;
+					&lt;th&gt;IP / Port&lt;/th&gt;
+					&lt;th&gt;Function / Type&lt;/th&gt;
+			&lt;/tr&gt;
+	&lt;/thead&gt;
+	&lt;tbody&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;ha.deef.dk&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;192.168.1.103:8123&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;Home Assistant&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;lv-426.deef.dk&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;192.168.1.10:8006&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;Proxmox Initial Node&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;lv-223.deef.dk&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;192.168.1.11:8006&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;Proxmox Node&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;lv-178.deef.dk&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;192.168.1.12:8006&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;Proxmox Node&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;moode.deef.dk&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;192.168.1.248:80&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;Moode Audio&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;nginx.deef.dk&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;192.168.1.204:81&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;Proxy Manager&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;pi-hole.deef.dk&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;192.168.1.127:80&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;Ad Blocking&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;pi-hole2.deef.dk&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;192.168.1.130:80&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;Ad Blocking&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;VLAN 10&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;-&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;192.168.10.204&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;IoT Device&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;VLAN 10&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;-&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;192.168.10.104&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;IoT Device&lt;/td&gt;
+			&lt;/tr&gt;
+			&lt;tr&gt;
+					&lt;td&gt;&lt;strong&gt;VLAN 10&lt;/strong&gt;&lt;/td&gt;
+					&lt;td&gt;-&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;192.168.10.44&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;IoT Device&lt;/td&gt;
+			&lt;/tr&gt;
+	&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;pi-hole&#34;&gt;Pi-hole&lt;/h2&gt;
+&lt;p&gt;I have installed Pi-hole on two devices to create a redundant and fault-tolerant network setup. By running two instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
