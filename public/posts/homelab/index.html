@@ -9,8 +9,10 @@
 <meta name="keywords" content="homelab, proxmox, raspberry pi, home assistant, pi-hole">
 <meta name="description" content="Hardware
 
-3× Lenovo ThinkCentre M920x 16 GB RAM, 256 GB NVMe
-Raspberry Pi 3B with HiFiBerry AMP&#43;
+Lenovo ThinkCentre M920x, i5-9400T, 16 GB RAM, 256 GB NVMe (lv-426)
+Lenovo ThinkCentre M920x, i5-8500, 16 GB RAM, 256 GB NVMe (lv-223)
+Lenovo ThinkCentre M920x, i3-8100, 16 GB RAM, 256 GB NVMe (lv-178)
+Raspberry Pi 3B &#43; HiFiBerry AMP&#43;
 Raspberry Pi 2B
 Cloud Gateway Ultra
 USW Flex Mini
@@ -42,9 +44,9 @@ Gateway/router/firewall: 192.168.1.1
 			
 			
 					VLAN 1
-					lv-178.deef.dk
-					192.168.1.12:8006
-					Proxmox Node
+					lv-426.deef.dk
+					192.168.1.10:8006
+					Proxmox Initial Node
 			
 			
 					VLAN 1
@@ -54,8 +56,8 @@ Gateway/router/firewall: 192.168.1.1
 			
 			
 					VLAN 1
-					lv-426.deef.dk
-					192.168.1.10:8006
+					lv-178.deef.dk
+					192.168.1.12:8006
 					Proxmox Node
 			
 			
@@ -68,7 +70,7 @@ Gateway/router/firewall: 192.168.1.1
 					VLAN 1
 					nginx.deef.dk
 					192.168.1.204:81
-					Proxy Manager &amp; DNS
+					Proxy Manager
 			
 			
 					VLAN 1
@@ -104,7 +106,7 @@ Gateway/router/firewall: 192.168.1.1
 
 
 Pi-hole
-I have installed Pi-hole on multiple devices to create a redundant and fault-tolerant network setup. By running multiple instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.">
+I have installed Pi-hole on two devices to create a redundant and fault-tolerant network setup. By running two instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/homelab/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
@@ -247,7 +249,7 @@ I have installed Pi-hole on multiple devices to create a redundant and fault-tol
     </h1>
     <div class="post-meta">
 
-<span title='2026-06-26 12:56:50 +0200 CEST'>26 June 2026</span>&nbsp;·&nbsp;<span>4 min</span>
+<span title='2026-06-26 12:56:50 +0200 CEST'>26 June 2026</span>&nbsp;·&nbsp;<span>5 min</span>
 
 </div>
   </header> <details class="toc" >
@@ -263,6 +265,8 @@ I have installed Pi-hole on multiple devices to create a redundant and fault-tol
             <li>
                 <a href="#pi-hole" aria-label="Pi-hole">Pi-hole</a></li>
             <li>
+                <a href="#nginx-proxy-manager" aria-label="Nginx Proxy Manager">Nginx Proxy Manager</a></li>
+            <li>
                 <a href="#home-assistant" aria-label="Home Assistant">Home Assistant</a></li>
             <li>
                 <a href="#resources" aria-label="Resources">Resources</a>
@@ -273,8 +277,10 @@ I have installed Pi-hole on multiple devices to create a redundant and fault-tol
 
   <div class="post-content md-content"><h2 id="hardware">Hardware<a hidden class="anchor" aria-hidden="true" href="#hardware">#</a></h2>
 <ul>
-<li>3× Lenovo ThinkCentre M920x 16 GB RAM, 256 GB NVMe</li>
-<li>Raspberry Pi 3B with HiFiBerry AMP+</li>
+<li>Lenovo ThinkCentre M920x, i5-9400T, 16 GB RAM, 256 GB NVMe (lv-426)</li>
+<li>Lenovo ThinkCentre M920x, i5-8500, 16 GB RAM, 256 GB NVMe (lv-223)</li>
+<li>Lenovo ThinkCentre M920x, i3-8100, 16 GB RAM, 256 GB NVMe (lv-178)</li>
+<li>Raspberry Pi 3B + HiFiBerry AMP+</li>
 <li>Raspberry Pi 2B</li>
 <li>Cloud Gateway Ultra</li>
 <li>USW Flex Mini</li>
@@ -306,9 +312,9 @@ I have installed Pi-hole on multiple devices to create a redundant and fault-tol
 			</tr>
 			<tr>
 					<td><strong>VLAN 1</strong></td>
-					<td>lv-178.deef.dk</td>
-					<td><code>192.168.1.12:8006</code></td>
-					<td>Proxmox Node</td>
+					<td>lv-426.deef.dk</td>
+					<td><code>192.168.1.10:8006</code></td>
+					<td>Proxmox Initial Node</td>
 			</tr>
 			<tr>
 					<td><strong>VLAN 1</strong></td>
@@ -318,8 +324,8 @@ I have installed Pi-hole on multiple devices to create a redundant and fault-tol
 			</tr>
 			<tr>
 					<td><strong>VLAN 1</strong></td>
-					<td>lv-426.deef.dk</td>
-					<td><code>192.168.1.10:8006</code></td>
+					<td>lv-178.deef.dk</td>
+					<td><code>192.168.1.12:8006</code></td>
 					<td>Proxmox Node</td>
 			</tr>
 			<tr>
@@ -332,7 +338,7 @@ I have installed Pi-hole on multiple devices to create a redundant and fault-tol
 					<td><strong>VLAN 1</strong></td>
 					<td>nginx.deef.dk</td>
 					<td><code>192.168.1.204:81</code></td>
-					<td>Proxy Manager &amp; DNS</td>
+					<td>Proxy Manager</td>
 			</tr>
 			<tr>
 					<td><strong>VLAN 1</strong></td>
@@ -368,24 +374,49 @@ I have installed Pi-hole on multiple devices to create a redundant and fault-tol
 </table>
 <hr>
 <h2 id="pi-hole">Pi-hole<a hidden class="anchor" aria-hidden="true" href="#pi-hole">#</a></h2>
-<p>I have installed Pi-hole on multiple devices to create a redundant and fault-tolerant network setup. By running multiple instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.</p>
+<p>I have installed Pi-hole on two devices to create a redundant and fault-tolerant network setup. By running two instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.</p>
 <p>My current setup consists of two Pi-hole instances across the following hardware:</p>
 <ul>
 <li><strong>One Proxmox VE node:</strong> Running a virtualized Pi-hole instance.</li>
 <li><strong>One Raspberry Pi 2 Model B:</strong> Running in headless mode and managed remotely over the network.</li>
 </ul>
-<p>I used the following command to install Pi-hole on the Raspberry Pi:</p>
+<p>For the Raspberry Pi, install with following commands:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --depth <span style="color:#ae81ff">1</span> https://github.com/pi-hole/pi-hole.git Pi-hole
 </span></span><span style="display:flex;"><span>cd <span style="color:#e6db74">&#34;Pi-hole/automated install/&#34;</span>
 </span></span><span style="display:flex;"><span>sudo bash basic-install.sh
-</span></span></code></pre></div><p>For the Proxmox VE nodes, I used the community script below to install.</p>
+</span></span></code></pre></div><p>For the Proxmox node, install with Proxmox VE community script below.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/pihole.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span></code></pre></div><hr>
+</span></span></code></pre></div><p>Assigning <code>192.168.1.127</code> and <code>192.168.1.130</code> as the primary and secondary DNS servers on my Unifi Cloud Gateway Ultra.</p>
+<hr>
+<h2 id="nginx-proxy-manager">Nginx Proxy Manager<a hidden class="anchor" aria-hidden="true" href="#nginx-proxy-manager">#</a></h2>
+<p>Install with Proxmox community helper script below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/nginxproxymanager.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><p>Setting up the DNS records on Cloudflare.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-dns" data-lang="dns"><span style="display:flex;"><span><span style="color:#75715e">;Type    Name          Content          Proxy </span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">A</span>        <span style="color:#a6e22e">deef.dk</span>       <span style="color:#ae81ff">192.168.1.204</span>    <span style="color:#960050;background-color:#1e0010">DNS</span> <span style="color:#960050;background-color:#1e0010">Only</span> <span style="color:#960050;background-color:#1e0010">-</span> <span style="color:#960050;background-color:#1e0010">reverse</span> <span style="color:#960050;background-color:#1e0010">IP</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CNAME</span>    <span style="color:#960050;background-color:#1e0010">*</span><span style="color:#a6e22e">deef.dk</span>      <span style="color:#a6e22e">deef.dk</span>          <span style="color:#960050;background-color:#1e0010">DNS</span> <span style="color:#960050;background-color:#1e0010">Only</span>
+</span></span></code></pre></div><p>Configuring Let&rsquo;s Encrypt SSL Certificate:
+<img alt="SSL Certificate" loading="lazy" src="/images/IMG_0008.png"></p>
+<p>Start by adding your first Proxy Host.
+<img alt="Add your first Proxy Host" loading="lazy" src="/images/IMG_00010.png">
+<em>Sometimes depending on the service you&rsquo;re proxying, you may need to play around with the settings.
+For example, Home Assistant requires you to select <code>WebSocket Support</code>. And sometimes the scheme needs to be set to <code>http</code> instead of <code>https</code>.</em></p>
+<p>Select the SSL certificate you just created.
+<img alt="SSL Certificate Selected" loading="lazy" src="/images/IMG_0009.png"></p>
+<p>Adding the local DNS records to both pi-holes instances.
+<img alt="Pi-hole local DNS Records" loading="lazy" src="/images/IMG_0007.png"></p>
+<hr>
 <h2 id="home-assistant">Home Assistant<a hidden class="anchor" aria-hidden="true" href="#home-assistant">#</a></h2>
-<p>HA is installed as a VM on Proxmox with this script.</p>
+<p>HA is installed as a VM on Proxmox with this helper script.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/vm/haos-vm.sh<span style="color:#e6db74">&#34;
-</span></span></span></code></pre></div><p>My Home Assistant dashboard.
-<img alt="Home Assistant Dashboard" loading="lazy" src="/images/IMG_0006.PNG"></p>
+</span></span></span></code></pre></div><p>For Home Assistant to work with reverse proxy, you need to add the following to the <code>configuration.yaml</code> file.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#75715e"># configuration.yaml</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">http</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">use_x_forwarded_for</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">trusted_proxies</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">192.168.1.204</span> <span style="color:#75715e"># &lt;- Your reverse proxy IP here</span>
+</span></span></code></pre></div><p>My Home Assistant dashboard fits perfectly on a older iPad I got for cheap.
+<img alt="Home Assistant Dashboard" loading="lazy" src="/images/IMG_0006.png"></p>
 <details>
     <summary>Click here to see the full HA Dashboard YAML</summary><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">type</span>: <span style="color:#ae81ff">sections</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">icon</span>: <span style="color:#ae81ff">mdi:button-pointer</span>
@@ -622,12 +653,22 @@ I have installed Pi-hole on multiple devices to create a redundant and fault-tol
 <hr>
 <h2 id="resources">Resources<a hidden class="anchor" aria-hidden="true" href="#resources">#</a></h2>
 <ul>
-<li><a href="https://www.home-assistant.io/">Home Assistant</a></li>
-<li><a href="https://nginxproxymanager.com/">Nginx Proxy Manager</a></li>
-<li><a href="https://pi-hole.net/">Pi-hole</a></li>
-<li><a href="https://community-scripts.org/scripts/home-assistant?id=home-assistant">Proxmox Home Assistant Script</a></li>
-<li><a href="https://community-scripts.org/scripts/pihole?id=pihole">Proxmox Pi-hole Script</a></li>
 <li><a href="https://www.proxmox.com/en/">Proxmox VE</a></li>
+<li><a href="https://www.home-assistant.io/">Home Assistant</a>
+<ul>
+<li><a href="https://community-scripts.org/scripts/home-assistant?id=home-assistant">HA Proxmox Helper Script</a></li>
+</ul>
+</li>
+<li><a href="https://nginxproxymanager.com/">Nginx Proxy Manager</a>
+<ul>
+<li><a href="https://community-scripts.org/scripts/nginxproxymanager?id=nginxproxymanager">NPM Proxmox Helper Script</a></li>
+</ul>
+</li>
+<li><a href="https://pi-hole.net/">Pi-hole</a>
+<ul>
+<li><a href="https://community-scripts.org/scripts/pihole?id=pihole">Pi-hole Proxmox Helper Script</a></li>
+</ul>
+</li>
 </ul>
 
 

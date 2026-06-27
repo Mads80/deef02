@@ -6,8 +6,10 @@ tags = ['homelab', 'proxmox', 'raspberry pi', 'home assistant', 'pi-hole']
 +++
 
 ## Hardware
-- 3× Lenovo ThinkCentre M920x 16 GB RAM, 256 GB NVMe
-- Raspberry Pi 3B with HiFiBerry AMP+
+- Lenovo ThinkCentre M920x, i5-9400T, 16 GB RAM, 256 GB NVMe (lv-426)
+- Lenovo ThinkCentre M920x, i5-8500, 16 GB RAM, 256 GB NVMe (lv-223)
+- Lenovo ThinkCentre M920x, i3-8100, 16 GB RAM, 256 GB NVMe (lv-178)
+- Raspberry Pi 3B + HiFiBerry AMP+
 - Raspberry Pi 2B
 - Cloud Gateway Ultra
 - USW Flex Mini
@@ -26,11 +28,11 @@ tags = ['homelab', 'proxmox', 'raspberry pi', 'home assistant', 'pi-hole']
 | Segment | Hostname | IP / Port | Function / Type |
 | ---------- | ---------- | -------------------- | -------------- |
 | **VLAN 1** | ha.deef.dk | `192.168.1.103:8123` | Home Assistant |
-| **VLAN 1** | lv-178.deef.dk | `192.168.1.12:8006` | Proxmox Node |
+| **VLAN 1** | lv-426.deef.dk | `192.168.1.10:8006` | Proxmox Initial Node |
 | **VLAN 1** | lv-223.deef.dk | `192.168.1.11:8006` | Proxmox Node |
-| **VLAN 1** | lv-426.deef.dk | `192.168.1.10:8006` | Proxmox Node |
+| **VLAN 1** | lv-178.deef.dk | `192.168.1.12:8006` | Proxmox Node |
 | **VLAN 1** | moode.deef.dk | `192.168.1.248:80` | Moode Audio |
-| **VLAN 1** | nginx.deef.dk | `192.168.1.204:81` | Proxy Manager & DNS |
+| **VLAN 1** | nginx.deef.dk | `192.168.1.204:81` | Proxy Manager |
 | **VLAN 1** | pi-hole.deef.dk | `192.168.1.127:80` | Ad Blocking |
 | **VLAN 1** | pi-hole2.deef.dk | `192.168.1.130:80` | Ad Blocking |
 | **VLAN 10** | - | `192.168.10.204` | IoT Device |
@@ -41,36 +43,79 @@ tags = ['homelab', 'proxmox', 'raspberry pi', 'home assistant', 'pi-hole']
 
 ## Pi-hole
 
-I have installed Pi-hole on multiple devices to create a redundant and fault-tolerant network setup. By running multiple instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.
+I have installed Pi-hole on two devices to create a redundant and fault-tolerant network setup. By running two instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.
 
 My current setup consists of two Pi-hole instances across the following hardware:
 * **One Proxmox VE node:** Running a virtualized Pi-hole instance.
 * **One Raspberry Pi 2 Model B:** Running in headless mode and managed remotely over the network.
 
-I used the following command to install Pi-hole on the Raspberry Pi:
+For the Raspberry Pi, install with following commands:
 ```bash
 git clone --depth 1 https://github.com/pi-hole/pi-hole.git Pi-hole
 cd "Pi-hole/automated install/"
 sudo bash basic-install.sh
 ```
 
-For the Proxmox VE nodes, I used the community script below to install.
+For the Proxmox node, install with Proxmox VE community script below.
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/pihole.sh)"
 ```
+
+Assigning `192.168.1.127` and `192.168.1.130` as the primary and secondary DNS servers on my Unifi Cloud Gateway Ultra.
+
+---
+
+## Nginx Proxy Manager
+
+Install with Proxmox community helper script below.
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/nginxproxymanager.sh)"
+```
+
+Setting up the DNS records on Cloudflare.
+
+```dns
+;Type    Name          Content          Proxy 
+A        deef.dk       192.168.1.204    DNS Only - reverse IP
+CNAME    *deef.dk      deef.dk          DNS Only
+```
+
+Configuring Let's Encrypt SSL Certificate:
+![SSL Certificate](/images/IMG_0008.png)
+
+Start by adding your first Proxy Host.
+![Add your first Proxy Host](/images/IMG_00010.png)
+*Sometimes depending on the service you're proxying, you may need to play around with the settings.
+For example, Home Assistant requires you to select `WebSocket Support`. And sometimes the scheme needs to be set to `http` instead of `https`.*
+
+Select the SSL certificate you just created.
+![SSL Certificate Selected](/images/IMG_0009.png)
+
+Adding the local DNS records to both pi-holes instances.
+![Pi-hole local DNS Records](/images/IMG_0007.png)
 
 ---
 
 ## Home Assistant
 
-HA is installed as a VM on Proxmox with this script.
+HA is installed as a VM on Proxmox with this helper script.
 
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/vm/haos-vm.sh"
 ```
 
-My Home Assistant dashboard.
-![Home Assistant Dashboard](/images/IMG_0006.PNG)
+For Home Assistant to work with reverse proxy, you need to add the following to the `configuration.yaml` file.
+
+```yaml
+# configuration.yaml
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 192.168.1.204 # <- Your reverse proxy IP here
+```
+
+My Home Assistant dashboard fits perfectly on a older iPad I got for cheap.
+![Home Assistant Dashboard](/images/IMG_0006.png)
 
 <!-- Data ligger i assets/snippets/ha-config.yaml, da det fyldte for meget her -->
 {{< details title="Click here to see the full HA Dashboard YAML" file="snippets/ha-config.yaml" lang="yaml" >}}{{< /details >}}
@@ -78,9 +123,10 @@ My Home Assistant dashboard.
 ---
 
 ## Resources
-- [Home Assistant](https://www.home-assistant.io/)
-- [Nginx Proxy Manager](https://nginxproxymanager.com/)
-- [Pi-hole](https://pi-hole.net/)
-- [Proxmox Home Assistant Script](https://community-scripts.org/scripts/home-assistant?id=home-assistant)
-- [Proxmox Pi-hole Script](https://community-scripts.org/scripts/pihole?id=pihole)
 - [Proxmox VE](https://www.proxmox.com/en/)
+- [Home Assistant](https://www.home-assistant.io/)
+  - [HA Proxmox Helper Script](https://community-scripts.org/scripts/home-assistant?id=home-assistant)
+- [Nginx Proxy Manager](https://nginxproxymanager.com/)
+  - [NPM Proxmox Helper Script](https://community-scripts.org/scripts/nginxproxymanager?id=nginxproxymanager)
+- [Pi-hole](https://pi-hole.net/)
+  - [Pi-hole Proxmox Helper Script](https://community-scripts.org/scripts/pihole?id=pihole)

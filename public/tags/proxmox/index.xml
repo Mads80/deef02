@@ -15,8 +15,10 @@
       <guid>http://localhost:1313/posts/homelab/</guid>
       <description>&lt;h2 id=&#34;hardware&#34;&gt;Hardware&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;3× Lenovo ThinkCentre M920x 16 GB RAM, 256 GB NVMe&lt;/li&gt;
-&lt;li&gt;Raspberry Pi 3B with HiFiBerry AMP+&lt;/li&gt;
+&lt;li&gt;Lenovo ThinkCentre M920x, i5-9400T, 16 GB RAM, 256 GB NVMe (lv-426)&lt;/li&gt;
+&lt;li&gt;Lenovo ThinkCentre M920x, i5-8500, 16 GB RAM, 256 GB NVMe (lv-223)&lt;/li&gt;
+&lt;li&gt;Lenovo ThinkCentre M920x, i3-8100, 16 GB RAM, 256 GB NVMe (lv-178)&lt;/li&gt;
+&lt;li&gt;Raspberry Pi 3B + HiFiBerry AMP+&lt;/li&gt;
 &lt;li&gt;Raspberry Pi 2B&lt;/li&gt;
 &lt;li&gt;Cloud Gateway Ultra&lt;/li&gt;
 &lt;li&gt;USW Flex Mini&lt;/li&gt;
@@ -48,9 +50,9 @@
 			&lt;/tr&gt;
 			&lt;tr&gt;
 					&lt;td&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
-					&lt;td&gt;lv-178.deef.dk&lt;/td&gt;
-					&lt;td&gt;&lt;code&gt;192.168.1.12:8006&lt;/code&gt;&lt;/td&gt;
-					&lt;td&gt;Proxmox Node&lt;/td&gt;
+					&lt;td&gt;lv-426.deef.dk&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;192.168.1.10:8006&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;Proxmox Initial Node&lt;/td&gt;
 			&lt;/tr&gt;
 			&lt;tr&gt;
 					&lt;td&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
@@ -60,8 +62,8 @@
 			&lt;/tr&gt;
 			&lt;tr&gt;
 					&lt;td&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
-					&lt;td&gt;lv-426.deef.dk&lt;/td&gt;
-					&lt;td&gt;&lt;code&gt;192.168.1.10:8006&lt;/code&gt;&lt;/td&gt;
+					&lt;td&gt;lv-178.deef.dk&lt;/td&gt;
+					&lt;td&gt;&lt;code&gt;192.168.1.12:8006&lt;/code&gt;&lt;/td&gt;
 					&lt;td&gt;Proxmox Node&lt;/td&gt;
 			&lt;/tr&gt;
 			&lt;tr&gt;
@@ -74,7 +76,7 @@
 					&lt;td&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
 					&lt;td&gt;nginx.deef.dk&lt;/td&gt;
 					&lt;td&gt;&lt;code&gt;192.168.1.204:81&lt;/code&gt;&lt;/td&gt;
-					&lt;td&gt;Proxy Manager &amp;amp; DNS&lt;/td&gt;
+					&lt;td&gt;Proxy Manager&lt;/td&gt;
 			&lt;/tr&gt;
 			&lt;tr&gt;
 					&lt;td&gt;&lt;strong&gt;VLAN 1&lt;/strong&gt;&lt;/td&gt;
@@ -110,7 +112,7 @@
 &lt;/table&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;pi-hole&#34;&gt;Pi-hole&lt;/h2&gt;
-&lt;p&gt;I have installed Pi-hole on multiple devices to create a redundant and fault-tolerant network setup. By running multiple instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.&lt;/p&gt;</description>
+&lt;p&gt;I have installed Pi-hole on two devices to create a redundant and fault-tolerant network setup. By running two instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
