@@ -106,7 +106,7 @@ Gateway/router/firewall: 192.168.1.1
 
 
 Pi-hole
-I have installed Pi-hole on two devices to create a redundant and fault-tolerant network setup. By running two instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.">
+I&rsquo;ve installed Pi-hole on two devices. By running two instances, I ensure that ad-blocking and local DNS resolution remain active even if one device goes offline or restarts.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/posts/homelab/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
@@ -374,19 +374,17 @@ I have installed Pi-hole on two devices to create a redundant and fault-tolerant
 </table>
 <hr>
 <h2 id="pi-hole">Pi-hole<a hidden class="anchor" aria-hidden="true" href="#pi-hole">#</a></h2>
-<p>I have installed Pi-hole on two devices to create a redundant and fault-tolerant network setup. By running two instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.</p>
-<p>My current setup consists of two Pi-hole instances across the following hardware:</p>
-<ul>
-<li><strong>One Proxmox VE node:</strong> Running a virtualized Pi-hole instance.</li>
-<li><strong>One Raspberry Pi 2 Model B:</strong> Running in headless mode and managed remotely over the network.</li>
-</ul>
+<p>I&rsquo;ve installed Pi-hole on two devices. By running two instances, I ensure that ad-blocking and local DNS resolution remain active even if one device goes offline or restarts.</p>
 <p>For the Raspberry Pi, install with following commands:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone --depth <span style="color:#ae81ff">1</span> https://github.com/pi-hole/pi-hole.git Pi-hole
 </span></span><span style="display:flex;"><span>cd <span style="color:#e6db74">&#34;Pi-hole/automated install/&#34;</span>
 </span></span><span style="display:flex;"><span>sudo bash basic-install.sh
-</span></span></code></pre></div><p>For the Proxmox node, install with Proxmox VE community script below.</p>
+</span></span></code></pre></div><p>For the Proxmox node, install with Proxmox community helper script below.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bash -c <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/pihole.sh<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span></code></pre></div><p>Assigning <code>192.168.1.127</code> and <code>192.168.1.130</code> as the primary and secondary DNS servers on my Unifi Cloud Gateway Ultra.</p>
+</span></span></code></pre></div><p>Assign <code>192.168.1.127</code> and <code>192.168.1.130</code> as the primary and secondary DNS servers on your router.</p>
+<p>Adding the local DNS records to both pi-holes instances.
+<img alt="Pi-hole local DNS Records" loading="lazy" src="/images/IMG_0007.png">
+<em>Notice the local DNS records all point to the Nginx Proxy Manager IP address.</em></p>
 <hr>
 <h2 id="nginx-proxy-manager">Nginx Proxy Manager<a hidden class="anchor" aria-hidden="true" href="#nginx-proxy-manager">#</a></h2>
 <p>Install with Proxmox community helper script below.</p>
@@ -397,14 +395,14 @@ I have installed Pi-hole on two devices to create a redundant and fault-tolerant
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">CNAME</span>    <span style="color:#960050;background-color:#1e0010">*</span><span style="color:#a6e22e">deef.dk</span>      <span style="color:#a6e22e">deef.dk</span>          <span style="color:#960050;background-color:#1e0010">DNS</span> <span style="color:#960050;background-color:#1e0010">Only</span>
 </span></span></code></pre></div><p>Configuring Let&rsquo;s Encrypt SSL Certificate:
 <img alt="SSL Certificate" loading="lazy" src="/images/IMG_0008.png"></p>
-<p>Start by adding your first Proxy Host.
+<p>Add your first Proxy Host.
 <img alt="Add your first Proxy Host" loading="lazy" src="/images/IMG_00010.png">
 <em>Sometimes depending on the service you&rsquo;re proxying, you may need to play around with the settings.
 For example, Home Assistant requires you to select <code>WebSocket Support</code>. And sometimes the scheme needs to be set to <code>http</code> instead of <code>https</code>.</em></p>
-<p>Select the SSL certificate you just created.
+<p>Select the SSL certificate you previously created.
 <img alt="SSL Certificate Selected" loading="lazy" src="/images/IMG_0009.png"></p>
-<p>Adding the local DNS records to both pi-holes instances.
-<img alt="Pi-hole local DNS Records" loading="lazy" src="/images/IMG_0007.png"></p>
+<p>You should now be able to access your services without using the IP-addresses. No more <em>site not secure</em> warnings and easy rememberable URLs like <code>ha.deef.dk</code>.</p>
+<p>Everything is set up to run locally. If you do a nslookup on <code>ha.deef.dk</code>, you will only see the local IP-address, not the external IP-address. Even if you&rsquo;re trying to access the service from outside your local network.</p>
 <hr>
 <h2 id="home-assistant">Home Assistant<a hidden class="anchor" aria-hidden="true" href="#home-assistant">#</a></h2>
 <p>HA is installed as a VM on Proxmox with this helper script.</p>

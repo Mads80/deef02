@@ -43,11 +43,7 @@ tags = ['homelab', 'proxmox', 'raspberry pi', 'home assistant', 'pi-hole', 'reve
 
 ## Pi-hole
 
-I have installed Pi-hole on two devices to create a redundant and fault-tolerant network setup. By running two instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.
-
-My current setup consists of two Pi-hole instances across the following hardware:
-* **One Proxmox VE node:** Running a virtualized Pi-hole instance.
-* **One Raspberry Pi 2 Model B:** Running in headless mode and managed remotely over the network.
+I've installed Pi-hole on two devices. By running two instances, I ensure that ad-blocking and local DNS resolution remain active even if one device goes offline or restarts.
 
 For the Raspberry Pi, install with following commands:
 ```bash
@@ -56,12 +52,16 @@ cd "Pi-hole/automated install/"
 sudo bash basic-install.sh
 ```
 
-For the Proxmox node, install with Proxmox VE community script below.
+For the Proxmox node, install with Proxmox community helper script below.
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/pihole.sh)"
 ```
 
-Assigning `192.168.1.127` and `192.168.1.130` as the primary and secondary DNS servers on my Unifi Cloud Gateway Ultra.
+Assign `192.168.1.127` and `192.168.1.130` as the primary and secondary DNS servers on your router.
+
+Adding the local DNS records to both pi-holes instances.
+![Pi-hole local DNS Records](/images/IMG_0007.png)
+*Notice the local DNS records all point to the Nginx Proxy Manager IP address.*
 
 ---
 
@@ -83,16 +83,17 @@ CNAME    *deef.dk      deef.dk          DNS Only
 Configuring Let's Encrypt SSL Certificate:
 ![SSL Certificate](/images/IMG_0008.png)
 
-Start by adding your first Proxy Host.
+Add your first Proxy Host.
 ![Add your first Proxy Host](/images/IMG_00010.png)
 *Sometimes depending on the service you're proxying, you may need to play around with the settings.
 For example, Home Assistant requires you to select `WebSocket Support`. And sometimes the scheme needs to be set to `http` instead of `https`.*
 
-Select the SSL certificate you just created.
+Select the SSL certificate you previously created.
 ![SSL Certificate Selected](/images/IMG_0009.png)
 
-Adding the local DNS records to both pi-holes instances.
-![Pi-hole local DNS Records](/images/IMG_0007.png)
+You should now be able to access your services without using the IP-addresses. No more *site not secure* warnings and easy rememberable URLs like `ha.deef.dk`.
+
+Everything is set up to run locally. If you do a nslookup on `ha.deef.dk`, you will only see the local IP-address, not the external IP-address. Even if you're trying to access the service from outside your local network.
 
 ---
 
