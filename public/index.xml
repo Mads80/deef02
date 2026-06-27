@@ -113,14 +113,6 @@
 &lt;p&gt;I have installed Pi-hole on multiple devices to create a redundant and fault-tolerant network setup. By running multiple instances, I ensure that ad-blocking and DNS resolution remain active even if one device goes offline or restarts.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Pi-hole</title>
-      <link>http://localhost:1313/posts/pi-hole/</link>
-      <pubDate>Thu, 25 Jun 2026 17:52:28 +0200</pubDate>
-      <guid>http://localhost:1313/posts/pi-hole/</guid>
-      <description>&lt;p&gt;I have Pi-hole installed on more than one device. The reason for this is that with more than one device, I can a more robust setup. For example, I have it installed on my raspberry pi and my Proxmox VE, so that if one device goes down, the other can still block ads.&lt;/p&gt;
-&lt;p&gt;Right now Pi-hole is running on my Proxmox VE in two different nodes and a Raspberry Pi Model 2B.&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>About</title>
       <link>http://localhost:1313/about/</link>
       <pubDate>Thu, 25 Jun 2026 17:17:42 +0200</pubDate>
