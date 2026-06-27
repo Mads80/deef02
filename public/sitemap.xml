@@ -14,6 +14,12 @@
     <loc>http://localhost:1313/posts/homelab/</loc>
     <lastmod>2026-06-26T12:56:50+02:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/tags/nginx/</loc>
+    <lastmod>2026-06-26T12:56:50+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/npm/</loc>
+    <lastmod>2026-06-26T12:56:50+02:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/tags/pi-hole/</loc>
     <lastmod>2026-06-26T12:56:50+02:00</lastmod>
   </url><url>
@@ -24,6 +30,9 @@
     <lastmod>2026-06-26T12:56:50+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/raspberry-pi/</loc>
+    <lastmod>2026-06-26T12:56:50+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/reverse-proxy/</loc>
     <lastmod>2026-06-26T12:56:50+02:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/</loc>
