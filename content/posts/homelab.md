@@ -6,14 +6,15 @@ tags = ['homelab', 'proxmox', 'raspberry pi', 'home assistant', 'pi-hole', 'reve
 +++
 
 ## Hardware
-- Lenovo ThinkCentre M920x, i5-9400T, 16 GB RAM, 256 GB NVMe (lv-426)
-- Lenovo ThinkCentre M920x, i5-8500, 16 GB RAM, 256 GB NVMe (lv-223)
-- Lenovo ThinkCentre M920x, i3-8100, 16 GB RAM, 256 GB NVMe (lv-178)
-- Raspberry Pi 3B + HiFiBerry AMP+
-- Raspberry Pi 2B
-- Cloud Gateway Ultra
-- USW Flex Mini
-- U7 Lite AP
+
+> - Lenovo ThinkCentre M920x, i5-9400T, 16 GB RAM, 256 GB NVMe (lv-426)
+> - Lenovo ThinkCentre M920x, i5-8500, 16 GB RAM, 256 GB NVMe (lv-223)
+> - Lenovo ThinkCentre M920x, i3-8100, 16 GB RAM, 256 GB NVMe (lv-178)
+> - Raspberry Pi 3B + HiFiBerry AMP+
+> - Raspberry Pi 2B
+> - Cloud Gateway Ultra
+> - USW Flex Mini
+> - U7 Lite AP
 
 
 ![My Homelab](/images/IMG_7091.jpg)
@@ -61,7 +62,7 @@ Assign `192.168.1.127` and `192.168.1.130` as the primary and secondary DNS serv
 
 Adding the local DNS records to both pi-holes instances.
 ![Pi-hole local DNS Records](/images/IMG_0007.png)
-*Notice the local DNS records all point to the Nginx Proxy Manager IP address.*
+*Notice the local DNS records all point to the Nginx Proxy Manager IP-address.*
 
 ---
 
@@ -80,20 +81,22 @@ A        deef.dk       192.168.1.204    DNS Only - reverse IP
 CNAME    *deef.dk      deef.dk          DNS Only
 ```
 
-Configuring Let's Encrypt SSL Certificate:
-![SSL Certificate](/images/IMG_0008.png)
+Configuring Let's Encrypt TLS Certificate:
+![TLS Certificate](/images/IMG_0008.png)
 
 Add your first Proxy Host.
 ![Add your first Proxy Host](/images/IMG_00010.png)
 *Sometimes depending on the service you're proxying, you may need to play around with the settings.
 For example, Home Assistant requires you to select `WebSocket Support`. And sometimes the scheme needs to be set to `http` instead of `https`.*
 
-Select the SSL certificate you previously created.
-![SSL Certificate Selected](/images/IMG_0009.png)
+Select the TLS certificate you previously created.
+![TLS Certificate Selected](/images/IMG_0009.png)
 
 You should now be able to access your services without using the IP-addresses. No more *site not secure* warnings and easy rememberable URLs like `ha.deef.dk`.
 
 Everything is set up to run locally. If you do a nslookup on `ha.deef.dk`, you will only see the local IP-address, not the external IP-address. Even if you're trying to access the service from outside your local network.
+
+Cloudflare acts as a [reverse proxy](https://www.cloudflare.com/learning/cdn/glossary/reverse-proxy/) and handles TLS termination. If you don't have a domain, you can use a free service like DuckDNS.
 
 ---
 
