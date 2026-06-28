@@ -3,6 +3,9 @@ theme = 'PaperMod'
 locale = 'en-GB'
 title = '>_ mads80'
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
 
 [params]
 #env = 'production'
