@@ -2,8 +2,8 @@ baseURL = 'https://deef.dev'
 theme = 'PaperMod'
 locale = 'en-GB'
 title = '>_ deef.dev'
+#Only needed if baseURL is different from the canonical URL.
 #canonifyURLs = true
-
 # [renderHooks]
 #   [renderHooks.image]
 #     defaultContentAdapter = 'hugo'
@@ -26,7 +26,7 @@ showToc = true
 
 [params.homeInfoParams]
 title = 'Hello, World!'
-content = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxHere I will write about my discoveries in tech and my journey through the world.'
+content = 'Here I will write about my discoveries in tech and my journey through the world.'
 
 
 [outputs]
