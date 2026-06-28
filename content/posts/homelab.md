@@ -59,6 +59,8 @@ cd "Pi-hole/automated install/"
 sudo bash basic-install.sh
 ```
 
+TEST
+
 For the Proxmox node, install with Proxmox community helper script below.
 ```bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/pihole.sh)"
