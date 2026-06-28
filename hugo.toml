@@ -4,9 +4,6 @@ locale = 'en-GB'
 title = '>_ mads80'
 canonifyURLs = true
 
-
-
-
 [renderHooks]
   [renderHooks.image]
     defaultContentAdapter = 'hugo'
