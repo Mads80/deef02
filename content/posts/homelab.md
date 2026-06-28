@@ -23,7 +23,7 @@ Personal documentation for my homelab infrastructure. This documentation contain
 > - USW Flex Mini
 > - U7 Lite AP
 
-![My Homelab](/images/IMG_7091.jpg "My Homelab")
+[![My Homelab](/images/my-homelab.jpg)](/images/my-homelab.jpg "My Homelab")
 <!-- Farven for denne text ligger i layouts/shortcodes/color.html -->
 {{<color "grey">}}_The top ThinkCentre is my WFH-computer and not part of the homelab._{{</color>}}
 
@@ -68,7 +68,7 @@ Assign `192.168.1.127` and `192.168.1.130` as the primary and secondary DNS serv
 
 Adding the local DNS records to both pi-holes instances.
 ![Pi-hole local DNS Records](/images/pi-local-dns.png "Pi-hole local DNS Records")
-*Notice the local DNS records all point to the Nginx Proxy Manager IP-address.*
+*Notice the local DNS records all point to the Nginx Proxy Manager IP-address, which will handle the requests.*
 
 ---
 
@@ -126,7 +126,7 @@ http:
 ```
 
 My Home Assistant dashboard fits perfectly on a older iPad I got for cheap.
-![Home Assistant Dashboard](/images/ha-dashboard.png "Home Assistant Dashboard")
+[![Home Assistant Dashboard](/images/ha-dashboard.png)](/images/ha-dashboard.png "Home Assistant Dashboard")
 
 <!-- Data ligger i assets/snippets/ha-config.yaml, da det fyldte for meget her -->
 {{< details title="Click here to see the full HA Dashboard YAML" file="snippets/ha-config.yaml" lang="yaml" >}}{{< /details >}}
