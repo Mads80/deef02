@@ -4,10 +4,6 @@ locale = 'en-GB'
 title = '>_ mads80'
 # what
 
-[caches]
-  [caches.images]
-    dir = ':cacheDir/images'
-
 [params]
 #env = 'production'
 defaultTheme = 'auto'
