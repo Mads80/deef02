@@ -1,4 +1,4 @@
-baseURL = 'https://mads80.github.io/deef02/'
+baseURL = 'https://deef.dev'
 theme = 'PaperMod'
 locale = 'en-GB'
 title = '>_ mads80'
