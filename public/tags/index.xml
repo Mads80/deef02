@@ -2,136 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on &gt;_ mads80</title>
-    <link>http://localhost:1313/tags/</link>
+    <link>https://example.org/tags/</link>
     <description>Recent content in Tags on &gt;_ mads80</description>
     <generator>Hugo</generator>
     <language>en-GB</language>
-    <lastBuildDate>Fri, 26 Jun 2026 12:56:50 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Dns</title>
-      <link>http://localhost:1313/tags/dns/</link>
-      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
-      <guid>http://localhost:1313/tags/dns/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Home Assistant</title>
-      <link>http://localhost:1313/tags/home-assistant/</link>
-      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
-      <guid>http://localhost:1313/tags/home-assistant/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Homelab</title>
-      <link>http://localhost:1313/tags/homelab/</link>
-      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
-      <guid>http://localhost:1313/tags/homelab/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Nginx</title>
-      <link>http://localhost:1313/tags/nginx/</link>
-      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
-      <guid>http://localhost:1313/tags/nginx/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Npm</title>
-      <link>http://localhost:1313/tags/npm/</link>
-      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
-      <guid>http://localhost:1313/tags/npm/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Pi-Hole</title>
-      <link>http://localhost:1313/tags/pi-hole/</link>
-      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
-      <guid>http://localhost:1313/tags/pi-hole/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Proxmox</title>
-      <link>http://localhost:1313/tags/proxmox/</link>
-      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
-      <guid>http://localhost:1313/tags/proxmox/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Raspberry Pi</title>
-      <link>http://localhost:1313/tags/raspberry-pi/</link>
-      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
-      <guid>http://localhost:1313/tags/raspberry-pi/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Reverse Proxy</title>
-      <link>http://localhost:1313/tags/reverse-proxy/</link>
-      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
-      <guid>http://localhost:1313/tags/reverse-proxy/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tls</title>
-      <link>http://localhost:1313/tags/tls/</link>
-      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
-      <guid>http://localhost:1313/tags/tls/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Unifi</title>
-      <link>http://localhost:1313/tags/unifi/</link>
-      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
-      <guid>http://localhost:1313/tags/unifi/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>About</title>
-      <link>http://localhost:1313/tags/about/</link>
-      <pubDate>Thu, 25 Jun 2026 17:17:42 +0200</pubDate>
-      <guid>http://localhost:1313/tags/about/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bio</title>
-      <link>http://localhost:1313/tags/bio/</link>
-      <pubDate>Thu, 25 Jun 2026 17:17:42 +0200</pubDate>
-      <guid>http://localhost:1313/tags/bio/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Contact</title>
-      <link>http://localhost:1313/tags/contact/</link>
-      <pubDate>Thu, 25 Jun 2026 17:17:42 +0200</pubDate>
-      <guid>http://localhost:1313/tags/contact/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Me</title>
-      <link>http://localhost:1313/tags/me/</link>
-      <pubDate>Thu, 25 Jun 2026 17:17:42 +0200</pubDate>
-      <guid>http://localhost:1313/tags/me/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Personal</title>
-      <link>http://localhost:1313/tags/personal/</link>
-      <pubDate>Thu, 25 Jun 2026 17:17:42 +0200</pubDate>
-      <guid>http://localhost:1313/tags/personal/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Profile</title>
-      <link>http://localhost:1313/tags/profile/</link>
-      <pubDate>Thu, 25 Jun 2026 17:17:42 +0200</pubDate>
-      <guid>http://localhost:1313/tags/profile/</guid>
-      <description></description>
-    </item>
+    <atom:link href="https://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Search</title>
-      <link>http://localhost:1313/tags/search/</link>
+      <link>https://example.org/tags/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/search/</guid>
+      <guid>https://example.org/tags/search/</guid>
       <description></description>
     </item>
   </channel>
