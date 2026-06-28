@@ -1,7 +1,7 @@
 baseURL = 'https://deef.dev'
 theme = 'PaperMod'
 locale = 'en-GB'
-title = '>_ mads80'
+title = '>_ deef.dev'
 #canonifyURLs = true
 
 # [renderHooks]
