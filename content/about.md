@@ -1,6 +1,6 @@
 +++
 date = '2026-06-25T17:17:42+02:00'
-draft = true
+draft = false
 title = 'About'
 tags = ["about", "me", "personal", "profile", "contact", "bio"]
 +++
