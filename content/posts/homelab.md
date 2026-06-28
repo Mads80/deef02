@@ -23,7 +23,7 @@ Personal documentation for my homelab infrastructure. This documentation contain
 > - USW Flex Mini
 > - U7 Lite AP
 
-[![My Homelab](/images/my-homelab.jpg)](/images/my-homelab.jpg "My Homelab")
+[![My Homelab](images/my-homelab.jpg)](images/my-homelab.jpg "My Homelab")
 <!-- Farven for denne text ligger i layouts/shortcodes/color.html -->
 {{<color "grey">}}_The top ThinkCentre is my WFH-computer and not part of the homelab._{{</color>}}
 
