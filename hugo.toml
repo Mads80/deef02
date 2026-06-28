@@ -2,11 +2,11 @@ baseURL = 'https://deef.dev'
 theme = 'PaperMod'
 locale = 'en-GB'
 title = '>_ mads80'
-canonifyURLs = true
+#canonifyURLs = true
 
-[renderHooks]
-  [renderHooks.image]
-    defaultContentAdapter = 'hugo'
+# [renderHooks]
+#   [renderHooks.image]
+#     defaultContentAdapter = 'hugo'
 
 [params]
 #env = 'production'
