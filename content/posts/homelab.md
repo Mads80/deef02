@@ -1,6 +1,6 @@
 +++
 date = '2026-06-26T12:56:50+02:00'
-draft = true
+draft = false
 title = 'Homelabbing'
 tags = ['homelab', 'proxmox', 'raspberry pi', 'home assistant', 'pi-hole', 'reverse proxy', 'nginx', 'npm', 'unifi', 'tls', 'dns']
 +++
