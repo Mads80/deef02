@@ -1,12 +1,13 @@
 baseURL = 'https://example.org/'
 theme = 'PaperMod'
 locale = 'en-GB'
-title = '>_ deef.dk'
+title = '>_ mads80'
 
 
 [params]
 #env = 'production'
 defaultTheme = 'auto'
+favicon = '/images/favicon.ico'
 hideFooter = false
 socialIcons = [
   {name = 'github', url = 'https://github.com/mads80'},

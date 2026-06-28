@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Tags on &gt;_ deef.dk</title>
+    <title>Tags on &gt;_ mads80</title>
     <link>http://localhost:1313/tags/</link>
-    <description>Recent content in Tags on &gt;_ deef.dk</description>
+    <description>Recent content in Tags on &gt;_ mads80</description>
     <generator>Hugo</generator>
     <language>en-GB</language>
     <lastBuildDate>Fri, 26 Jun 2026 12:56:50 +0200</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dns</title>
+      <link>http://localhost:1313/tags/dns/</link>
+      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
+      <guid>http://localhost:1313/tags/dns/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Home Assistant</title>
       <link>http://localhost:1313/tags/home-assistant/</link>
@@ -62,6 +69,20 @@
       <link>http://localhost:1313/tags/reverse-proxy/</link>
       <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
       <guid>http://localhost:1313/tags/reverse-proxy/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tls</title>
+      <link>http://localhost:1313/tags/tls/</link>
+      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
+      <guid>http://localhost:1313/tags/tls/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Unifi</title>
+      <link>http://localhost:1313/tags/unifi/</link>
+      <pubDate>Fri, 26 Jun 2026 12:56:50 +0200</pubDate>
+      <guid>http://localhost:1313/tags/unifi/</guid>
       <description></description>
     </item>
     <item>

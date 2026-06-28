@@ -5,8 +5,4 @@ title = 'My First Post'
 +++
 ## Introduction
 
-This is **bold** text, and this is *italic* text.
-
-Visit the [Hugo](https://gohugo.io/) website.
-
-Fedt mand.
+This is my first post. Website is made with [Hugo](https://gohugo.io/) and the theme is [PaperMod](https://github.com/adityatelange/hugo-PaperMod).

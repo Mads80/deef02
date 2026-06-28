@@ -2,11 +2,18 @@
 date = '2026-06-26T12:56:50+02:00'
 draft = true
 title = 'Homelabbing'
-tags = ['homelab', 'proxmox', 'raspberry pi', 'home assistant', 'pi-hole', 'reverse proxy', 'nginx', 'npm']
+tags = ['homelab', 'proxmox', 'raspberry pi', 'home assistant', 'pi-hole', 'reverse proxy', 'nginx', 'npm', 'unifi', 'tls', 'dns']
 +++
+
+## Overview
+
+Personal documentation for my homelab infrastructure. This documentation contains a consolidated overview of infrastructure, network topology and links to installation scripts.
+
+---
 
 ## Hardware
 
+> - GeeekPi DeskPi RackMate T1
 > - Lenovo ThinkCentre M920x, i5-9400T, 16 GB RAM, 256 GB NVMe (lv-426)
 > - Lenovo ThinkCentre M920x, i5-8500, 16 GB RAM, 256 GB NVMe (lv-223)
 > - Lenovo ThinkCentre M920x, i3-8100, 16 GB RAM, 256 GB NVMe (lv-178)
@@ -16,8 +23,7 @@ tags = ['homelab', 'proxmox', 'raspberry pi', 'home assistant', 'pi-hole', 'reve
 > - USW Flex Mini
 > - U7 Lite AP
 
-
-![My Homelab](/images/IMG_7091.jpg)
+![My Homelab](/images/IMG_7091.jpg "My Homelab")
 <!-- Farven for denne text ligger i layouts/shortcodes/color.html -->
 {{<color "grey">}}_The top ThinkCentre is my WFH-computer and not part of the homelab._{{</color>}}
 
@@ -61,7 +67,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/Proxmo
 Assign `192.168.1.127` and `192.168.1.130` as the primary and secondary DNS servers on your router.
 
 Adding the local DNS records to both pi-holes instances.
-![Pi-hole local DNS Records](/images/IMG_0007.png)
+![Pi-hole local DNS Records](/images/pi-local-dns.png "Pi-hole local DNS Records")
 *Notice the local DNS records all point to the Nginx Proxy Manager IP-address.*
 
 ---
@@ -81,16 +87,17 @@ A        deef.dk       192.168.1.204    DNS Only - reverse IP
 CNAME    *deef.dk      deef.dk          DNS Only
 ```
 
-Configuring Let's Encrypt TLS Certificate:
-![TLS Certificate](/images/IMG_0008.png)
+Configuring Let's Encrypt SSL Certificate:
+![TLS Certificate](/images/create-certificate.png "Create SSL Certificate")
 
 Add your first Proxy Host.
-![Add your first Proxy Host](/images/IMG_00010.png)
-*Sometimes depending on the service you're proxying, you may need to play around with the settings.
-For example, Home Assistant requires you to select `WebSocket Support`. And sometimes the scheme needs to be set to `http` instead of `https`.*
+![Add your first Proxy Host](/images/add-proxy-host.png "Add your first Proxy Host")
+> Tip:  
+> *Sometimes depending on the service you're proxying, you may need to play around with the settings.
+> For example, Home Assistant requires you to select `WebSocket Support`. And sometimes the scheme needs to be set to `http` instead of `https`.*
 
-Select the TLS certificate you previously created.
-![TLS Certificate Selected](/images/IMG_0009.png)
+Select the SSL certificate you previously created.
+![SSL Certificate Selected](/images/add-proxy-ssl.png "SSL Certificate Selected")
 
 You should now be able to access your services without using the IP-addresses. No more *site not secure* warnings and easy rememberable URLs like `ha.deef.dk`.
 
@@ -119,7 +126,7 @@ http:
 ```
 
 My Home Assistant dashboard fits perfectly on a older iPad I got for cheap.
-![Home Assistant Dashboard](/images/IMG_0006.png)
+![Home Assistant Dashboard](/images/ha-dashboard.png "Home Assistant Dashboard")
 
 <!-- Data ligger i assets/snippets/ha-config.yaml, da det fyldte for meget her -->
 {{< details title="Click here to see the full HA Dashboard YAML" file="snippets/ha-config.yaml" lang="yaml" >}}{{< /details >}}
@@ -134,3 +141,9 @@ My Home Assistant dashboard fits perfectly on a older iPad I got for cheap.
   - [NPM Proxmox Helper Script](https://community-scripts.org/scripts/nginxproxymanager?id=nginxproxymanager)
 - [Pi-hole](https://pi-hole.net/)
   - [Pi-hole Proxmox Helper Script](https://community-scripts.org/scripts/pihole?id=pihole)
+
+---
+
+## Conclusion
+
+This post got a bit long, but having separated posts about my homelab just didn't make sense, so I decided to put everything in one post. I don't always write into detail, but I hope you find at least some of it useful.
